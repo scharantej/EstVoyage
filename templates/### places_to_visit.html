@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Places to Visit in Estonia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Estonia Travel Planner</h1>
+<nav>
+<a href="/">Home</a>
+<a href="/places_to_visit">Places to Visit</a>
+<a href="/things_to_do">Things to Do</a>
+<a href="/where_to_stay">Where to Stay</a>
+<a href="/how_to_get_around">How to Get Around</a>
+<a href="/contact">Contact</a>
+</nav>
+</header>
+<main>
+<section id="places">
+<h2>Places to Visit in Estonia</h2>
+<div class="destinations">
+{% for destination in destinations %}
+<div class="destination">
+<img src="images/{{ destination.name }}.jpg" alt="{{ destination.name }}">
+<h3>{{ destination.name }}</h3>
+<p>{{ destination.location }}</p>
+<ul>
+{% for highlight in destination.highlights %}
+<li>{{ highlight }}</li>
+{% endfor %}
+</ul>
+<a href="#" class="btn">Learn More</a>
+</div>
+{% endfor %}
+</div>
+</section>
+</main>
+<footer>
+<p>Copyright &copy; 2023 Explore Estonia. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
