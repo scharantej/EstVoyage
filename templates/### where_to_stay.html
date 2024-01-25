@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Stay in Estonia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Estonia Travel Planner</h1>
+<nav>
+<a href="/">Home</a>
+<a href="/places_to_visit">Places to Visit</a>
+<a href="/things_to_do">Things to Do</a>
+<a href="/where_to_stay">Where to Stay</a>
+<a href="/how_to_get_around">How to Get Around</a>
+<a href="/contact">Contact</a>
+</nav>
+</header>
+<main>
+<section id="accommodations">
+<h2>Where to Stay in Estonia</h2>
+<div class="accommodations">
+{% for accommodation in accommodations %}
+<div class="accommodation">
+<img src="images/{{ accommodation.name }}.jpg" alt="{{ accommodation.name }}">
+<h3>{{ accommodation.name }}</h3>
+<p>{{ accommodation.location }}</p>
+<ul>
+<li><b>Amenities:</b> {{ accommodation.amenities }}</li>
+<li><b>Price:</b> {{ accommodation.price }}</li>
+</ul>
+<a href="#" class="btn">Book Now</a>
+</div>
+{% endfor %}
+</div>
+</section>
